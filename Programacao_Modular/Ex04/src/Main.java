@@ -5,7 +5,7 @@ public class Main {
         //Declarando variaveis:
         String frase;
         String invertida;
-        
+
         System.out.println("Inverter frase ou palavra");
 
         Scanner scanner = new Scanner(System.in);
