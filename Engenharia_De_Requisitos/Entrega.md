@@ -1,4 +1,6 @@
-# Criação mini mundo
+
+
+# 1. Criação mini mundo
 
 Este é a primeira etapa do trabalho de Engenharia de Requisitos onde devemos criar um minimundo explicando o sistema com os seguintes requisitos:
 1. Tipo do negocio
@@ -9,7 +11,7 @@ Este é a primeira etapa do trabalho de Engenharia de Requisitos onde devemos cr
 
    ---
    
-## Descrição do problema:
+# 2. Descrição do problema:
    ### Aqui serão apresentados as descrições e como devemos resolver o problema
 
 1. **Clientes e Contas**:
