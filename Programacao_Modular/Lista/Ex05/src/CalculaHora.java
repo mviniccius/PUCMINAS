@@ -1,9 +1,9 @@
 public class CalculaHora {
 
-    public static int tempoDescanco(int hora, int minuto, int materias){
+    public static double tempoDescanco(double hora, double minuto, double materias){
         //declarando variaveis
-        int tempoConvertido;
-        int tempoDescanco;
+        double tempoConvertido;
+        double tempoDescanco;
 
         //convertendo o tempo total em minutos
         tempoConvertido = minuto + (hora * 60);
@@ -13,6 +13,5 @@ public class CalculaHora {
         return tempoDescanco;
 
     }
-
 
 }
