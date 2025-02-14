@@ -1,1 +1,1 @@
-#Repositório utilizado para entrega de algumas atividades
+# Repositório utilizado para entrega de algumas atividades
