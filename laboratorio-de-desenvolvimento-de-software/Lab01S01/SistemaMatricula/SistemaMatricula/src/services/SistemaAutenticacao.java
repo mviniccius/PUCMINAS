@@ -22,6 +22,8 @@ public class SistemaAutenticacao {
     //Mock
     private void mockUsuarios() {
         alunos.add(new Aluno("João Silva", "j1", "1234", "20231001", "Engenharia", 4));
+        alunos.add(new Aluno("Anderson Silva", "j2", "1234", "202", "Engenharia", 4));
+
         professores.add(new Professor("Carlos Andrade", "carlos@hotmail", "senha123", "Banco de Dados"));
         secretarias.add(new Secretaria("Maria Souza", "maria@hotmail", "admin"));
     }
@@ -34,7 +36,7 @@ public class SistemaAutenticacao {
         }
         return null;
     }
-
+    //login
     public Usuario autenticarProfessor(String email, String senha){
         for(Professor professor: professores){
             if(professor.getEmail().equals(email) && professor.autenticar(senha)){
@@ -51,5 +53,22 @@ public class SistemaAutenticacao {
             }
         }
         return null;
+    }
+
+    //Cadastro de novos usuarios
+    public void cadastrarAluno(String nome, String email, String senha, String matricula, String curso, int periodo){       
+          alunos.add(new Aluno(nome, email, senha, matricula, curso, periodo));            
+    }
+    public void cadastrarProfessor(String nome, String email, String senha, String Disciplina){
+        professores.add(new Professor(nome, email, senha, Disciplina));        
+    }
+    public void cadastrarSecretaria(String nome, String email, String senha){
+        secretarias.add(new Secretaria(nome, email, senha));
+    }
+
+    public void imprimirAlunos(){
+        for(Aluno aluno : alunos){
+            System.out.println(aluno);
+        }
     }
 }

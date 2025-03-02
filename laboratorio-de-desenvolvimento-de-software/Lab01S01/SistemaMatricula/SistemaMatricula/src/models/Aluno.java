@@ -20,7 +20,7 @@ public class Aluno extends Usuario {
 
 	@Override
 	public String toString(){
-		return "===Aluno===\n" + nome + "\n===Marticula===\n" + matricula + "\n===Curso===\n" + curso + "\n===Periodo===\n" + periodo;
+		return "===Aluno===\n" + nome + "\n===Marticula===\n" + matricula + "\n===Curso===\n" + curso + "\n===Periodo===\n" + periodo + "\n\n";
 	}
 	
 	
