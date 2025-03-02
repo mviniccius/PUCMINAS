@@ -38,6 +38,8 @@ public class Aluno extends Usuario {
 		
 	}
 	
-	
+	public boolean autenticar(String login, String senha) {
+        return this.login.equals(login) && this.senha.equals(senha);
+    }
 	
 }
