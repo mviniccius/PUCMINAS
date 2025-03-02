@@ -14,6 +14,6 @@ public class Professor extends Usuario{
 
 	@Override
 	public String toString(){
-		return "===Professor===\n" + nome + "\n===Disciplina===\n" + disciplina;
+		return "===Professor===\n" + nome + "\n===Disciplina===\n" + disciplina + "\n\n";
 	}
 }

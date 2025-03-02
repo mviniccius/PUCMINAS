@@ -8,6 +8,6 @@ public class Secretaria extends Usuario{
 
 		@Override
 		public String toString(){
-			return "===Secretaria===\n"  + nome;
+			return "===Secretaria===\n"  + nome + "\n\n";
 		}
 }

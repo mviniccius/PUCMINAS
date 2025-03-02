@@ -73,6 +73,12 @@ public class SistemaMatricula {
 				case 6:
 					sistema.imprimirAlunos();
 					break;
+				case 7:
+					sistema.imprimirProfessores();
+					break;
+				case 8:
+					sistema.imprimirSecretarias();
+					break;
 				default:
 					System.out.println("Opcao invalida");
 			}

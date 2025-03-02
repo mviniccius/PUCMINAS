@@ -71,4 +71,14 @@ public class SistemaAutenticacao {
             System.out.println(aluno);
         }
     }
+    public void imprimirProfessores(){
+        for(Professor professor : professores){
+            System.out.println(professor);
+        }
+    }
+    public void imprimirSecretarias(){
+        for(Secretaria secretaria : secretarias){
+            System.out.println(secretaria);
+        }
+    }
 }
