@@ -70,13 +70,13 @@ public class SistemaMatricula {
 				case 4:
 					cadastrarUsuario(sc, sistema);
 					break;
-				case 6:
+				case 50:
 					sistema.imprimirAlunos();
 					break;
-				case 7:
+				case 51:
 					sistema.imprimirProfessores();
 					break;
-				case 8:
+				case 52:
 					sistema.imprimirSecretarias();
 					break;
 				default:
