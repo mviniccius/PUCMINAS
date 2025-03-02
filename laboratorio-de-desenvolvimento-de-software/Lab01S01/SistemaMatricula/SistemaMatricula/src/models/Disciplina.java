@@ -6,31 +6,31 @@ import java.util.List;
 public class Disciplina {
 	
 	private String nome;
-	private int maxAlunos = 60;
-	private int minAlunos = 3;
-	private List<Aluno> alunosMatriculados = new ArrayList<>();
-	
-	public Disciplina(String nome) {
+	int cargaHoraria;
+	private Curso curso;
+
+	public Disciplina(String nome, int cargaHoraria, Curso curso) {
 		this.nome = nome;
-	}
-	
-	public boolean matricularAluno(Aluno aluno) {
-		if(alunosMatriculados.size() < maxAlunos) {
-			alunosMatriculados.add(aluno);
-			return true;
-		}else {
-			System.out.println("Turma cheia!");
-			return false;
-		}		
-	}
-	public void verificarAtivacao() {
-		if(alunosMatriculados.size() < minAlunos) {
-			System.out.println("Disciplina " + nome + " Cancelado por falta de alunos!");
-		}else {
-			System.out.println("Disciplina " + nome + " Terá no proximo semestre!");
-		}
-	}
+		this.cargaHoraria = cargaHoraria;
+		this.curso = curso;
+	}	
+
+	/*
+	 * Gets
+	 */
 	public String getNome() {
         return nome;
     }
+	public int getCargaHoraria(){
+		return cargaHoraria;
+	}
+	public Curso getCurso(){
+		return curso;
+	}
+
+	@Override
+	public String toString(){
+		return"===Disciplina===\n" + nome + "\n===Carga Horaria===\n" + cargaHoraria + "\n===Cruso===\n" + curso.getNome() + "\n";
+	}
+
 }

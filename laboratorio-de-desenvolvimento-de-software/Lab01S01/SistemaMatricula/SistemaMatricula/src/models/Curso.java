@@ -9,4 +9,8 @@ public class Curso {
 		this.nome = nome;
 		this.quantidadeSemestres = quantidadeSemestres;
 	}
+
+	public String getNome(){
+		return nome;
+	}
 }

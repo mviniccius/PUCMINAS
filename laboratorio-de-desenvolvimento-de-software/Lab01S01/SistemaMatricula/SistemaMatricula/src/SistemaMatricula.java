@@ -1,37 +1,19 @@
 import models.*;
 import services.SistemaAutenticacao;
+import services.SistemaCursos;
 
 import java.util.Scanner;
 
 
 public class SistemaMatricula {
 
-	private static Scanner sc = new Scanner(System.in);
+	//private static Scanner sc = new Scanner(System.in);
 	
-	
-	
+	private static SistemaCursos sistemaCursos = new SistemaCursos();
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		//dados mocados
 		
-		Aluno aluno = new Aluno("marcao", "marcus@hotmail", "123", "1", "Eng software", 4);
-		Professor professor = new Professor("Arurani", "Arunani@hotmail", "123", "Laboratorio");
-		Secretaria secretaria = new Secretaria("Dirce", "dirce@hotmail", "123");
-
-
-		
-		System.out.println(aluno.toString());
-		System.out.println("-------------------------------------");		
-		System.out.println(professor.toString());
-		System.out.println("-------------------------------------");
-		System.out.println(secretaria.toString());
-		System.out.println("-------------------------------------");
-		SistemaAutenticacao sa = new SistemaAutenticacao();
-		System.out.println("LISTA ALUNO");
-		sa.imprimirAlunos();
-		System.out.println("-------------------------------------");
-
 		//------------------variaveis---------------------------
 
 		Scanner sc = new Scanner(System.in);
@@ -154,4 +136,67 @@ public class SistemaMatricula {
                 System.out.println("Opção inválida.");
         }       
     }
+
+
+	/*
+	 * cadastro do curso
+	 */
+	public static void gerenciarCursos(){
+		Scanner sc = new Scanner(System.in);
+		while (true) {
+			System.out.println("\n=== GERENCIAMENTO DE CURSOS ===");
+            System.out.println("1. Cadastrar Curso");
+            System.out.println("2. Listar Cursos");
+            System.out.println("3. Voltar ao Menu Principal");
+            System.out.print("Escolha uma opção: ");
+
+			int opcao = sc.nextInt();
+			sc.nextLine();
+
+			if(opcao == 3){
+				System.out.println("Voltou!");
+				break;
+			}
+			switch (opcao) {
+				case 1:
+					//cadastro de curso
+					cadastrarCurso();
+					break;
+			
+				case 2:
+					// listar curso
+					listarCursos();
+					break;
+
+				default:
+					System.out.println("Opcao invalida");
+			}
+		}
+	}
+
+	private static void cadastrarCurso(){
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("\nDigite o nome do curso:");
+		String nome = sc.nextLine();
+		System.out.println("Digite a quantidade de creditos: ");
+		int creditos = sc.nextInt();
+		sc.nextLine();
+
+		boolean sucesso = sistemaCursos.cadastrarCurso(nome, creditos);
+
+		if(sucesso){
+			System.out.println("Curso cadastrado com sucesso!\n");
+		}else{
+			System.out.println("Disciplina ja cadastrada!");
+		}
+	}
+
+	private static void listarCursos(){
+		System.out.println("\n=== LISTA DE CURSOS ===");
+		for(Curso curso : sistemaCursos.listarCursos()){
+			System.out.println(curso);
+		}
+	}
 }
