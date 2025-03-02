@@ -1,8 +1,13 @@
 package models;
 
-public class Secretaria {
+public class Secretaria extends Usuario{
 
-		public void gerarCurriculo(String curso) {
-			System.out.println("Gerando curro para o curso: " + curso);
+		public Secretaria(String nome, String email, String senha){
+			super(nome, email, senha);
+		}
+
+		@Override
+		public String toString(){
+			return "===Secretaria===\n"  + nome;
 		}
 }

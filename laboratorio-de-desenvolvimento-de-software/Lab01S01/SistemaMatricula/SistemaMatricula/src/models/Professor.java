@@ -2,16 +2,18 @@ package models;
 
 public class Professor extends Usuario{
 	
-	private String nome;
-	private String titulacao;
-	
-	public Professor(String login, String senha, String nome, String titulacao) {
-		super(login, senha);
-		this.nome = nome;
-		this.titulacao = titulacao;
+	private String disciplina;
+
+
+	public Professor (String nome, String email, String senha, String disciplina){
+		super(nome, email, senha);
+		this.disciplina = disciplina;
 	}
-	
-	public void visualizarAlunosMatriculdados(Disciplina disciplina) {
-		System.out.println(disciplina.getNome());
+
+
+
+	@Override
+	public String toString(){
+		return "===Professor===\n" + nome + "\n===Disciplina===\n" + disciplina;
 	}
 }
