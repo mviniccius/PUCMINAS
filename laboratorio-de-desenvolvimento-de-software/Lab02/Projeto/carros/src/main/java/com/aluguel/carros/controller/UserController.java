@@ -31,5 +31,9 @@ public class UserController {
     public void excluir(@PathVariable String id){
        userService.excluir(id);
    }
+   @PutMapping("/{id}")
+    public UserEntity atualizar(@PathVariable String id, @RequestBody UserEntity user){
+       return userService.atualizar(id, user);
+   }
 
 }

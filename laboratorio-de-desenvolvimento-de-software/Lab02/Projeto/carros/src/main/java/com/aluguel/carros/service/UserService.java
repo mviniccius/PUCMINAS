@@ -32,4 +32,17 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
+    public  UserEntity atualizar(String id, UserEntity newUser){
+        UserEntity jaExiste = userRepository.findById(id).orElse(null);
+
+        if(jaExiste != null){
+            jaExiste.setNome(newUser.getNome());
+            jaExiste.setEmail(newUser.getEmail());
+            jaExiste.setSenha(newUser.getSenha());
+            return userRepository.save(jaExiste);
+        }else {
+            return null;
+        }
+    }
+
 }
