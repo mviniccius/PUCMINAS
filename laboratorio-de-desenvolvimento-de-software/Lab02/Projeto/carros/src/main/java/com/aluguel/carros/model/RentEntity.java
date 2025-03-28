@@ -1,10 +1,6 @@
 package com.aluguel.carros.model;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.time.LocalDate;
-
 
 public class RentEntity {
 
@@ -18,8 +14,5 @@ public class RentEntity {
     public void setId(String id) {
         this.id = id;
     }
-
-    }
-
 
 }
