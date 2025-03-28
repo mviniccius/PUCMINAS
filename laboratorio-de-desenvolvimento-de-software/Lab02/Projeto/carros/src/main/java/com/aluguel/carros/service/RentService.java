@@ -20,4 +20,8 @@ public class RentService {
     public List<RentEntity> listarTodosContratos(){
         return rentRepository.findAll();
     }
+
+    public void excluir(String id){
+        rentRepository.deleteById(id);
+    }
 }
