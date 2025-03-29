@@ -10,7 +10,7 @@ public class RentEntity {
     private String id;
     private String userId;
     private String carId;
-    
+
     public String getUserId() {
         return userId;
     }
