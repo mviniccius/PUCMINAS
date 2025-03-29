@@ -9,9 +9,8 @@ public class RentEntity {
     @Id
     private String id;
     private String userId;
-
     private String carId;
-
+    
     public String getUserId() {
         return userId;
     }
