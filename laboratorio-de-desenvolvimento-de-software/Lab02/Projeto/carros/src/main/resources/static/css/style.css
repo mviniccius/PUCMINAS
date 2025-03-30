@@ -1,11 +1,8 @@
-body{
-    background-color: blue;
+html,body{
+    height: 100%;
 }
-.meio{
-    background-color: white;
-    width: 200px;
-    
-    position: absolute;
-   
-    
+
+.form-container{
+    max-width: 400px;
+    padding: 1rem;
 }
