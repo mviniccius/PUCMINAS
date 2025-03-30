@@ -48,7 +48,7 @@ public class UserController {
     public ResponseEntity<?> autenticar(@RequestBody LoginRequest login){
        Optional<UserEntity> usuario = userRepository.findByEmailAndSenha(
                login.getEmail(),
-               login.getEmail()
+               login.getSenha()
        );
 
        if(usuario.isPresent()){

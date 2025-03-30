@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
         const email = document.getElementById("email").value;
         const senha = document.getElementById("senha").value;
 
-        fetch("https://locallhost:8080/users/login", {
+        fetch("http://localhost:8080/users/login", {
             method: "POST",
             headers:{
                 "Content-Type":"application/json"
