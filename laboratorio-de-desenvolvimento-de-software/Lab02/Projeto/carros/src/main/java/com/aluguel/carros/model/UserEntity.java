@@ -9,7 +9,6 @@ import javax.xml.stream.events.StartElement;
 @Document(collection = "user")
 public class UserEntity {
 
-
     @Id
     private String id;
     private String nome;

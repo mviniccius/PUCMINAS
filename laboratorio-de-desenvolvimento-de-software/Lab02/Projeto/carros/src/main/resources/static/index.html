@@ -12,29 +12,29 @@
 </head>
 <body class="d-flex align-items-center py-4">
     <main class="w-100 m-auto form-container">
-        <form>
+        <form id="loginForm">
             <h1 class="h3 mb-3 fw-normal">Login</h1>
             <div class="form-floating mb-3">
                 <input
                     type="text"
                     class="form-control"
                     name="email"
-                    id="formId1"
+                    id="email"
                     placeholder="EXEMPLO@EXEMPLO.COM"
                 />
-                <label for="formId1">Email</label>
+                <label for="email">Email</label>
             </div>
             <div class="form-floating mb-3">
                 <input
                     type="password"
                     class="form-control"
                     name="senha"
-                    id="formId2"
-                    placeholder="senha"
+                    id="senha"
+                    placeholder="Digite aqui sua senha senha"
                 />
-                <label for="formId1">Senha</label>
+                <label for="senha">Senha</label>
             </div>
-            <button class="btn btn-primary w-100">Entrar</button>
+            <button class="btn btn-primary w-100" type="submit">Entrar</button>
         </form>        
     </main>
 

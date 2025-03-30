@@ -27,7 +27,6 @@ public class RentEntity {
         this.carId = carId;
     }
 
-
     public String getId() {
         return id;
     }

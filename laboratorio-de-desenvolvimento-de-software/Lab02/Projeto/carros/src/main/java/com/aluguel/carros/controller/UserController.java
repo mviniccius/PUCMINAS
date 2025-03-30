@@ -46,7 +46,7 @@ public class UserController {
    }
    @PostMapping("/login")
     public ResponseEntity<?> autenticar(@RequestBody LoginRequest login){
-       Optional<UserEntity> usuario = userRepository.findByEmailESenha(
+       Optional<UserEntity> usuario = userRepository.findByEmailAndSenha(
                login.getEmail(),
                login.getEmail()
        );
