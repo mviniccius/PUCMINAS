@@ -31,4 +31,9 @@ public class CarsController {
         carsService.excluirCarro(id);
     }
 
+    @GetMapping("/disponiveis")
+    public List<CarsEntity> listarDisponiveis(){
+        return carsService.listarCarrosDisponiveis();
+    }
+
 }

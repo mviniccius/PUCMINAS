@@ -1,6 +1,7 @@
 package com.aluguel.carros.service;
 
 
+import com.aluguel.carros.model.CarsEntity;
 import com.aluguel.carros.model.RentEntity;
 import com.aluguel.carros.repository.CarsRepository;
 import com.aluguel.carros.repository.RentRepository;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RentService {
@@ -24,13 +26,13 @@ public class RentService {
 
     public RentEntity alugarCarro(RentEntity aluguel){
 
-        var user = userRepository.findById(aluguel.getUserId())
-                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+        Optional<CarsEntity> carroOpt = carsRepository.findById(aluguel.getCarId());
 
-        var carro = carsRepository.findById(aluguel.getCarId())
-                .orElseThrow(() -> new RuntimeException("Carro não encontrado"));
-
-
+        if (carroOpt.isPresent() && carroOpt.get().isDisponivel()){
+            CarsEntity carro = carroOpt.get();
+            carro.setDisponivel(false);
+            carsRepository.save(carro);
+        }
         return rentRepository.save(aluguel);
     }
     public List<RentEntity> listarTodosContratos(){

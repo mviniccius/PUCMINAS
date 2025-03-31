@@ -20,6 +20,10 @@ public class CarsService {
         return carsRepository.findAll();
     }
 
+    public List<CarsEntity>listarCarrosDisponiveis(){
+        return carsRepository.findByDisponivelTrue();
+    }
+
     public CarsEntity novoCarro(CarsEntity carro){
         return carsRepository.save(carro);
     }

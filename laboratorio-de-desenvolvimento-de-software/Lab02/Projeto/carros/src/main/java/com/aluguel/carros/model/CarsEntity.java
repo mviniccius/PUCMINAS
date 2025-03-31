@@ -14,6 +14,17 @@ public class CarsEntity {
     private String modelo;
     private int ano;
     private  String placa;
+    private boolean isDisponivel = true;
+
+    public boolean isDisponivel() {
+        return isDisponivel;
+    }
+
+    public void setDisponivel(boolean disponivel) {
+        isDisponivel = disponivel;
+    }
+
+
 
 
     public String getId() {

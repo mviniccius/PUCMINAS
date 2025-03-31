@@ -2,7 +2,7 @@ function listarCarros() {
     fetch("http://localhost:8080/cars")
       .then(res => res.json())
       .then(carros => {
-        const div = document.getElementById("listaCarros");
+        const div = document.getElementById("listarCarros");
         div.innerHTML = "";
   
         carros.forEach(carro => {
