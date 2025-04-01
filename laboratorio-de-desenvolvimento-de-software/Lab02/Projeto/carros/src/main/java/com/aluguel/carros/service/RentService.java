@@ -42,4 +42,8 @@ public class RentService {
     public void excluir(String id){
         rentRepository.deleteById(id);
     }
+
+    public List<RentEntity> listarPorUsuario(String userId){
+        return rentRepository.findByUserId(userId);
+    }
 }

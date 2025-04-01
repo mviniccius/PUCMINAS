@@ -12,10 +12,8 @@ import java.util.List;
 @RequestMapping("/rent")
 public class RentController {
 
-
     @Autowired
     private RentService rentService;
-
 
     @GetMapping
     public List<RentEntity> listarTodos(){
@@ -30,5 +28,10 @@ public class RentController {
     @DeleteMapping("/{id}")
     public void exclui(@PathVariable String id){
         rentService.excluir(id);
+    }
+
+    @GetMapping("/user/{userId}")
+    public List<RentEntity> listarPorUsuario(@PathVariable String userId){
+        return rentService.listarPorUsuario(userId);
     }
 }

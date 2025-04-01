@@ -100,3 +100,43 @@ function reservarCarro() {
       alert("❌ Falha ao reservar o carro.");
     });
 }
+
+function listarContratos() {
+  const userId = localStorage.getItem("userId");
+
+  fetch(`http://localhost:8080/rent/user/${userId}`)
+    .then(res => res.json())
+    .then(contratos => {
+      const div = document.getElementById("meusContratos");
+      div.innerHTML = "<h4>Meus Aluguéis:</h4>";
+
+      if (contratos.length === 0) {
+        div.innerHTML += "<p>Você ainda não fez nenhum aluguel.</p>";
+        return;
+      }
+
+      contratos.forEach(c => {
+        // Buscar o carro pelo ID
+        fetch(`http://localhost:8080/cars/${c.carId}`)
+          .then(res => res.json())
+          .then(carro => {
+            const item = document.createElement("div");
+            item.classList.add("border", "rounded", "p-2", "mb-2");
+
+            item.innerHTML = `
+              <p><strong>Carro:</strong> ${carro.marca} ${carro.modelo} (${carro.ano})</p>
+              <p><strong>Início:</strong> ${c.dataInicio}</p>
+              <p><strong>Fim:</strong> ${c.dataFim}</p>
+            `;
+            div.appendChild(item);
+          })
+          .catch(err => {
+            console.error("Erro ao buscar carro:", err);
+          });
+      });
+    })
+    .catch(err => {
+      console.error("Erro ao buscar contratos:", err);
+      alert("Erro ao carregar seus aluguéis.");
+    });
+}

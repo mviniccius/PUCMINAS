@@ -36,4 +36,9 @@ public class CarsController {
         return carsService.listarCarrosDisponiveis();
     }
 
+    @GetMapping("/{id}")
+    public CarsEntity buscarCarroPorId(@PathVariable String id) {
+        return carsService.buscarCarroPorId(id);
+    }
+
 }

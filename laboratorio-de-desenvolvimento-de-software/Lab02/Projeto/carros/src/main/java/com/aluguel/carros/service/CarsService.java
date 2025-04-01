@@ -32,4 +32,8 @@ public class CarsService {
         carsRepository.deleteById(id);
     }
 
+    public CarsEntity buscarCarroPorId(String id) {
+        return carsRepository.findById(id).orElse(null);
+    }
+
 }
