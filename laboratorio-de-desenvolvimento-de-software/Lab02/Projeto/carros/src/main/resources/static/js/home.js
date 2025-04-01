@@ -30,17 +30,37 @@ function listarCarrosDisponiveis(){
 
       carros.forEach(carro =>{
         const radio = document.createElement("div");
+        radio.classList.add("form-check")
         radio.innerHTML=`
-        <input type="radio" name="carroSelecionado" value="${carro.id}" required>
-        <label>${carro.marca} ${carro.modelo} - ${carro.ano}</label>`;
+        <input type="radio" class="form-check-input" name="carroSelecionado" value="${carro.id}" required>
+        <label class="form-check-label">${carro.marca} ${carro.modelo} - ${carro.ano}</label>`;
         container.appendChild(radio);
+
+        radio.querySelector("input").addEventListener("change", verificarCarroSelecionado);
       });
     })
     .catch(err =>{
       console.error("Erro ao buscar", err);
     })
+    verificarCarroSelecionado();
 }
   
+function verificarCarroSelecionado() {
+  const reservarBtn = document.getElementById("reservarBtn");
+  const radios = document.querySelectorAll('input[name="carroSelecionado"]');
+  let carroSelecionado = false;
+
+  radios.forEach(radio => {
+      if (radio.checked) {
+          carroSelecionado = true;
+      }
+  });
+
+  reservarBtn.disabled = !carroSelecionado; 
+}
+
+
+window.onload = verificarCarroSelecionado;
 
 function reservarCarro() {
   const userId = localStorage.getItem("userId");
