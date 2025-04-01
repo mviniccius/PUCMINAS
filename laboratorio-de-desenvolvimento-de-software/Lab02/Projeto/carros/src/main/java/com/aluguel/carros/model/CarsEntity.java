@@ -14,18 +14,15 @@ public class CarsEntity {
     private String modelo;
     private int ano;
     private  String placa;
-    private boolean isDisponivel = true;
+    private boolean disponivel = true;
 
     public boolean isDisponivel() {
-        return isDisponivel;
+        return disponivel;
     }
 
     public void setDisponivel(boolean disponivel) {
-        isDisponivel = disponivel;
+        this.disponivel = disponivel;
     }
-
-
-
 
     public String getId() {
         return id;

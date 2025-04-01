@@ -19,8 +19,18 @@
     </header>
 <body>
     <h1>Carros</h1>
-    <button type="button" class="btn btn-primary" onclick="listarCarros()">Listar carros</button>
-    <div id="listarCarros"></div>
+    <button type="button" class="btn btn-primary" onclick="listarCarrosDisponiveis()">Listar carros</button>
+    <form id="aluguelForm" onsubmit="event.preventDefault(); reservarCarro();">
+        <div id="carrosDisponiveis"></div>
+        <label>Data de inicio:
+            <input type="date" name="dataInicio" id="dataInicio" required>
+        </label><br>
+        <label>Data fim:
+            <input type="date" name="dataFim" id="dataFim" required>
+        </label><br><br><br>
+
+        <button type="submit" class="btn btn-primary">Reservar</button>
+    </form>
 </body>
 
 

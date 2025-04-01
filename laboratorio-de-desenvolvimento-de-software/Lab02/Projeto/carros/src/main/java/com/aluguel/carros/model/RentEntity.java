@@ -10,6 +10,24 @@ public class RentEntity {
     private String id;
     private String userId;
     private String carId;
+    private String dataInicio;
+    private String dataFim;
+
+    public String getDataInicio() {
+        return dataInicio;
+    }
+
+    public void setDataInicio(String dataInicio) {
+        this.dataInicio = dataInicio;
+    }
+
+    public String getDataFim() {
+        return dataFim;
+    }
+
+    public void setDataFim(String dataFim) {
+        this.dataFim = dataFim;
+    }
 
     public String getUserId() {
         return userId;
