@@ -27,7 +27,11 @@ document.addEventListener("DOMContentLoaded", function(){
             localStorage.setItem("userId", usuario.id);
             localStorage.setItem("nome", usuario.nome);
 
-            window.location.href = "home.html";
+            if(usuario.email === "admin@admin.com"){
+                window.location.href = "admin.html"
+            }else{
+                window.location.href = "home.html";
+            }
         
         }).catch(err => {
             alert("ERROU");

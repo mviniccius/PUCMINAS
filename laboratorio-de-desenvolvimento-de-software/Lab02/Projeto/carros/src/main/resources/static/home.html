@@ -16,8 +16,9 @@
             </div>
         </nav>          
     </header>
-<body>
-    <div class="d-flex align-items-center p-2 flex-column">
+<main>
+
+    <div class="d-flex align-items-center p-4 flex-column">
         <h1>Carros</h1>
         <button type="button" class="btn btn-primary" onclick="listarCarrosDisponiveis()">Listar carros</button>
         <form id="aluguelForm" onsubmit="event.preventDefault(); reservarCarro();">            
@@ -37,11 +38,11 @@
             </div>
         </form>
     </div>
-
-
+    
+    
     <button class="btn btn-outline-info mt-3" onclick="listarContratos()">Ver meus aluguéis</button>
     <div id="meusContratos" class="mt-3"></div>
-
+    
 </body>
 
 
@@ -49,7 +50,7 @@
 <script src="/js/auth.js"></script>
 <script src="/js/home.js"></script>
 <script src="/js/logout.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</main>
 </body>
 </html>
