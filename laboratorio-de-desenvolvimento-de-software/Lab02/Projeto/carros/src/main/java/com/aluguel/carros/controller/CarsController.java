@@ -2,11 +2,12 @@ package com.aluguel.carros.controller;
 
 
 import com.aluguel.carros.model.CarsEntity;
-import com.aluguel.carros.repository.CarsRepository;
 import com.aluguel.carros.service.CarsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
 
+import java.util.Map;
 import java.util.List;
 
 @RestController
@@ -40,5 +41,19 @@ public class CarsController {
     public CarsEntity buscarCarroPorId(@PathVariable String id) {
         return carsService.buscarCarroPorId(id);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<CarsEntity> atualizarDisponibilidade(@PathVariable String id, @RequestBody Map<String, Object> body) {
+        CarsEntity carroExistente = carsService.buscarCarroPorId(id);
+
+        if (body.containsKey("disponivel")) {
+            boolean novoStatus = Boolean.parseBoolean(body.get("disponivel").toString());
+            carroExistente.setDisponivel(novoStatus);
+        }
+
+        CarsEntity atualizado = carsService.novoCarro(carroExistente);
+        return ResponseEntity.ok(atualizado);
+    }
+
 
 }
