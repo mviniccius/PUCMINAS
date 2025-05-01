@@ -27,7 +27,8 @@ document.querySelector("form").addEventListener("submit", async function(e){
             sessionStorage.setItem("aluno", JSON.stringify(aluno));
 
             //redireciona para tela do aluno:
-            window.location.href = "aluno.html";
+            console.log("Cheguei aqui para redirecionar!!!")
+            window.location.href="aluno.html";
 
         }else {
             const erro = await response.text();
