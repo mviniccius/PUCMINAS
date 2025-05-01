@@ -23,4 +23,13 @@ public class AlunoService {
         aluno.setTipo("aluno");
         return alunoRepository.save(aluno);
     }
+
+    public Aluno autenticarAluno(String email, String senha){
+        Aluno aluno = alunoRepository.findByEmail(email);
+
+        if (aluno == null || !aluno.getSenha().equals(senha)){
+            throw new RuntimeException("Email ou senha invalida!");
+        }
+        return aluno;
+    }
 }
