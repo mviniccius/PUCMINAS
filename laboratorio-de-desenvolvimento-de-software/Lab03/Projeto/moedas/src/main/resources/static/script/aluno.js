@@ -2,13 +2,13 @@
 const aluno = JSON.parse(sessionStorage.getItem("aluno"));
 
 //verifica se tem aluno logado
-// if(aluno && aluno.nome){
-//     document.getElementById("nomeAluno").textContent = aluno.nome;
-// } else{
-//     //se não tiver logado redireciona para login
-//     alert("Voce precisa logar!");
-//     window.location.href = "index.html";
-// }
+if(aluno && aluno.nome){
+    document.getElementById("nomeAluno").textContent = aluno.nome;
+} else{
+    //se não tiver logado redireciona para login
+    alert("Voce precisa logar!");
+    window.location.href = "index.html";
+}
 
 //logout
 const btnLogout = document.getElementById("btnLogout");

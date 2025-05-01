@@ -22,4 +22,25 @@ public class EmpresaService {
         empresa.setTipo("empresa");
         return empresaRepository.save(empresa);
     }
+
+    public Empresa autenticarEmpresa(String email, String senha) {
+        Empresa empresa = empresaRepository.findByEmail(email);
+
+        // Log para depuração
+        System.out.println("Email recebido: " + email);
+        if (empresa == null) {
+            System.out.println("Empresa não encontrada.");
+            return null;
+        }
+
+        System.out.println("Senha digitada: " + senha + " | Senha cadastrada: " + empresa.getSenha());
+
+        if (senha != null && empresa.getSenha().equals(senha)) {
+            return empresa;
+        }
+
+        return null;
+    }
+
+
 }
