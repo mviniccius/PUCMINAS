@@ -4,11 +4,13 @@ document.querySelector("form").addEventListener("submit", async function(e){
     //capturar dados do formulario
     const email = document.getElementById("email").value;
     const senha = document.getElementById("senha").value;
+    const tipoLogin = document.getElementById("tipoLogin").value;
 
     //Requisicao
     const loginDTO = {
         email: email,
-        senha: senha
+        senha: senha,
+        tipoLogin: tipoLogin
     };
 
     try{
