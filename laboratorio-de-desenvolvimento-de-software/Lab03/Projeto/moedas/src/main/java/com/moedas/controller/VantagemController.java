@@ -29,5 +29,5 @@ public class VantagemController {
         }catch (RuntimeException e){
             return ResponseEntity.badRequest().body(e.getMessage());
         }
-    }   
+    }
 }

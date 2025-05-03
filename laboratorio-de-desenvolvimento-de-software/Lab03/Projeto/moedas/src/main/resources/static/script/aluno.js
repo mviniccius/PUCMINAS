@@ -1,6 +1,10 @@
 //recupera os dados do local storage
 const aluno = JSON.parse(sessionStorage.getItem("aluno"));
 
+//recupera o dado de saldo do aluno
+document.getElementById("saldoMoedas").textContent = aluno.saldoMoedas;
+
+
 //verifica se tem aluno logado
 if (aluno && aluno.nome) {
     document.getElementById("nomeAluno").textContent = aluno.nome;

@@ -23,9 +23,9 @@ public class VantagemService {
                 .collect(Collectors.toList());
     }
 
-    public Vantagem comprarCupom(String id){
+    public Vantagem comprarCupom(String idVantagem){
         //buscar cupom pelo ID
-        Vantagem cupom = vantagemRepository.findById(id).orElse(null);
+        Vantagem cupom = vantagemRepository.findById(idVantagem).orElse(null);
 
         //verifica se o cupom existe
         if (cupom == null){
