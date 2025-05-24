@@ -10,7 +10,6 @@ public class Professor extends UsuarioEntity {
     private String id;
     private String departamento;
     private String instituicao;
-
     private int saldoMoedas;
 
     public String getId() {
