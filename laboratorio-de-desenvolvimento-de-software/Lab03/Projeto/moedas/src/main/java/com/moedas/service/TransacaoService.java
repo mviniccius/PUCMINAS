@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import static java.time.LocalDateTime.*;
 
@@ -50,4 +51,19 @@ public class TransacaoService {
         transacaoRepository.save(recebimento);
 
     }
+
+    //Lista somente os recebimentos do aluno
+    public List<Transacao> listarRecebimentosDoAluno(String idAluno){
+        return transacaoRepository.findByAlunoIdAndTipoOrderByDataDesc(idAluno,"recebimento");
+    }
+    //Lista toas as transacoes feitas por um professor(envios)
+    public List<Transacao> listarPorProfessor(String idProfessor){
+        return transacaoRepository.findByProfessorIdOrderByDataDesc(idProfessor);
+    }
+
+    //listar todas as transacoes do aluno(resgate e recebimento)
+    public List<Transacao> listarPorAluno(String idAluno){
+        return transacaoRepository.findByAlunoIdOrderByDataDesc(idAluno);
+    }
+
 }

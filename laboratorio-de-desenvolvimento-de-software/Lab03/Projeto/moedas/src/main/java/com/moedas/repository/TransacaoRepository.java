@@ -12,4 +12,8 @@ public interface TransacaoRepository extends MongoRepository<Transacao, String> 
 
     // Lista transações feitas por um professor (envios), mais recentes primeiro
     List<Transacao> findByProfessorIdOrderByDataDesc(String professorId);
+
+    //Isso permite consultar as transações do aluno filtrando pelo tipo, ordenadas por data
+    List<Transacao> findByAlunoIdAndTipoOrderByDataDesc(String alunoId, String tipo);
+
 }
