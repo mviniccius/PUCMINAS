@@ -1,6 +1,6 @@
 package com.moedas.controller;
 
-
+import com.moedas.model.Professor;
 import com.moedas.model.Transacao;
 import com.moedas.service.TransacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +18,13 @@ public class TransicaoController {
 
     @Autowired
     private TransacaoService transacaoService;
+
+    //listar todas as transacoes
+    @GetMapping
+    public List<Transacao> listarTransacoes(){
+        return transacaoService.listarTodasTransacoes();
+    }
+
 
     //lista somente as transacoes de recebimento do aluo
     @GetMapping("/aluno/{id}")

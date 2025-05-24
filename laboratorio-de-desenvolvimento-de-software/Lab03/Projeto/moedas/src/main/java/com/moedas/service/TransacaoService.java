@@ -10,10 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
-
-import static java.time.LocalDateTime.*;
 
 @Service
 public class TransacaoService {
@@ -50,6 +47,11 @@ public class TransacaoService {
         recebimento.setAluno(aluno);
         transacaoRepository.save(recebimento);
 
+    }
+
+    //listar todas as transacoes
+    public List<Transacao> listarTodasTransacoes(){
+        return transacaoRepository.findAll();
     }
 
     //Lista somente os recebimentos do aluno
