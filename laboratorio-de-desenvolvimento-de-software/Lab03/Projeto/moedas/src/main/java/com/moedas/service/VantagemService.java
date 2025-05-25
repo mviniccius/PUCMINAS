@@ -65,8 +65,16 @@ public class VantagemService {
         //diminui a quantidade de cupons
         cupom.setQuantidadeCupm(cupom.getQuantidadeCupm() - 1);
         //salvar nova quantidade do cupom
-        
-        return vantagemRepository.save(cupom);
+        vantagemRepository.save(cupom);
+
+        transacaoService.registrarResgate(
+                aluno,
+                cupom,
+                cupom.getCustoMoedas(),
+                "Compra da Vantagem" + cupom.getNome()
+        );
+
+        return cupom;
     }
 
 }

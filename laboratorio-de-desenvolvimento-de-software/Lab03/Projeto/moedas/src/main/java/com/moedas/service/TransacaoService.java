@@ -3,6 +3,7 @@ package com.moedas.service;
 import com.moedas.model.Aluno;
 import com.moedas.model.Professor;
 import com.moedas.model.Transacao;
+import com.moedas.model.Vantagem;
 import com.moedas.repository.AlunoRepository;
 import com.moedas.repository.ProfessorRepository;
 import com.moedas.repository.TransacaoRepository;
@@ -47,6 +48,16 @@ public class TransacaoService {
         recebimento.setAluno(aluno);
         transacaoRepository.save(recebimento);
 
+    }
+    public void registrarResgate(Aluno aluno, Vantagem vantagem, int valor, String descricao){
+        Transacao transacao = new Transacao();
+        transacao.setAluno(aluno);
+        transacao.setTipo("Resgate");
+        transacao.setValor(valor);
+        transacao.setDescricao(descricao);
+        transacao.setData(LocalDate.now());
+        transacao.setVantagem((vantagem));
+        transacaoRepository.save(transacao);
     }
 
     //listar todas as transacoes

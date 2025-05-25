@@ -21,6 +21,8 @@ public class Transacao {
     private Aluno aluno;
     @DBRef
     private Professor professor;
+    @DBRef
+    private Vantagem vantagem;
 
     public String getId() {
         return id;
@@ -76,5 +78,13 @@ public class Transacao {
 
     public void setProfessor(Professor professor) {
         this.professor = professor;
+    }
+
+    public Vantagem getVantagem() {
+        return vantagem;
+    }
+
+    public void setVantagem(Vantagem vantagem) {
+        this.vantagem = vantagem;
     }
 }
