@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/vantagens")
@@ -22,10 +23,11 @@ public class VantagemController {
     }
 
     @PutMapping("{id}/comprar")
-    public ResponseEntity<?> comprarCupom(@PathVariable String id){
+    public ResponseEntity<?> comprarCupom(@PathVariable String id, @RequestBody Map<String, String> dados){
         try{
-            Vantagem atualizado = vantagemService.comprarCupom(id);
-            return ResponseEntity.ok(atualizado);
+            String idAluno = dados.get("idAluno");
+            Vantagem vantagem = vantagemService.comprarCupom(id, idAluno);
+            return ResponseEntity.ok(vantagem);
         }catch (RuntimeException e){
             return ResponseEntity.badRequest().body(e.getMessage());
         }
