@@ -26,7 +26,7 @@ public class TransicaoController {
     }
 
 
-    //lista somente as transacoes de recebimento do aluo
+    //lista somente as transacoes de recebimento do aluno
     @GetMapping("/aluno/{id}")
     public ResponseEntity<List<Transacao>> listarPorAluno(@PathVariable String id){
         List<Transacao> transacoes = transacaoService.listarRecebimentosDoAluno(id);
