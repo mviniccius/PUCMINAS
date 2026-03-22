@@ -1,17 +1,7 @@
-.venv/
-venv/
-__pycache__/
-*.pyc
 # Dependências
 node_modules/
-package-lock.json
-
-# Banco de dados SQLite
-*.db
-
 # Variáveis de ambiente (senhas, chaves JWT)
 .env
-
 # Sistema / Editor
 .DS_Store
 Thumbs.db
